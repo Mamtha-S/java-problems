@@ -1,0 +1,25 @@
+package prime;
+import java.util.*;
+
+public class primenumber {
+        public static void main(String[] args){
+			int n;
+			Scanner s=new Scanner(System.in);
+			n=s.nextInt();
+			if(n%2==1)
+				if(n%3!=0)
+					System.out.println(n+" is the prime number.");
+				else
+					System.out.println(n+" is not the prime number.");
+			else
+				System.out.println(n+" is not the prime number.");
+			}
+
+	}
+ -----------------
+ OUTPUT
+ -----------------
+ 17
+17 is the prime number.
+24
+24 is not the prime number.
