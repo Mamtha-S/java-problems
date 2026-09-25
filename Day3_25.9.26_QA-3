@@ -1,0 +1,23 @@
+**Count Vowels** — Count vowels in a string
+_______________________________________________
+// Method 1: Simple loop
+String text = "Hello World";
+int count = 0;
+for (char c : text.toLowerCase().toCharArray()) {
+    if ("aeiou".indexOf(c) >= 0) {
+        count++;
+    }
+}
+System.out.println(count);  // 3
+
+// Method 2: Using Stream API (Java 8+)
+String text = "Hello World";
+long count = text.toLowerCase().chars()
+    .filter(ch -> "aeiou".indexOf(ch) >= 0)
+    .count();  // 3
+System.out.println(count);
+
+// Method 3: Regex (if you need pattern matching)
+String text = "Hello World";
+int count = text.toLowerCase().replaceAll("[^aeiou]", "").length();
+System.out.println(count);  // 3
