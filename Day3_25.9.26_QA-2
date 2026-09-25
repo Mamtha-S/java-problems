@@ -1,0 +1,19 @@
+**Find Maximum/Minimum** — In array/list
+____________________________________________
+// Method 1: Using Collections
+int[] arr = {5, 2, 9, 1, 7};
+int max = Collections.max(Arrays.asList(5, 2, 9, 1, 7));  // 9
+int min = Collections.min(Arrays.asList(5, 2, 9, 1, 7));  // 1
+
+// Method 2: Using Stream API (Java 8+)
+int[] arr = {5, 2, 9, 1, 7};
+int max = Arrays.stream(arr).max().orElse(0);  // 9
+int min = Arrays.stream(arr).min().orElse(0);  // 1
+
+// Method 3: Loop (for primitives, faster)
+int[] arr = {5, 2, 9, 1, 7};
+int max = arr[0];
+for (int num : arr) {
+    if (num > max) max = num;
+}
+System.out.println(max);  // 9
