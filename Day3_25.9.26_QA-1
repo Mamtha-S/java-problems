@@ -1,0 +1,18 @@
+**Remove Duplicates from Array** — Keep unique elements only
+______________________________________________________________
+import java.util.*;
+
+// Method 1: Using HashSet (fastest)
+int[] arr = {1, 2, 2, 3, 3, 3, 4};
+Set<Integer> unique = new HashSet<>(Arrays.asList(1, 2, 2, 3, 3, 3, 4));
+System.out.println(unique);  // [1, 2, 3, 4]
+
+// Method 2: Preserve order using LinkedHashSet
+Set<Integer> ordered = new LinkedHashSet<>(Arrays.asList(1, 2, 2, 3, 3, 3, 4));
+System.out.println(ordered);  // [1, 2, 3, 4] (in insertion order)
+
+// Method 3: Using Stream API (Java 8+)
+List<Integer> list = Arrays.asList(1, 2, 2, 3, 3, 3, 4);
+List<Integer> unique = list.stream().distinct().toList();
+System.out.println(unique);  // [1, 2, 3, 4]
+
