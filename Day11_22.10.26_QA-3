@@ -1,0 +1,30 @@
+**Flatten 2D Vector** — Iterate through 2D array as 1D
+
+import java.util.*;
+
+class Vector2D {
+
+    private List<Integer> flattened;
+    private int index;
+
+    public Vector2D(int[][] vec) {
+
+        flattened = new ArrayList<>();
+        index = 0;
+
+        for (int[] row : vec) {
+            for (int num : row) {
+                flattened.add(num);
+            }
+        }
+    }
+
+    public int next() {
+        return flattened.get(index++);
+    }
+
+    public boolean hasNext() {
+        return index < flattened.size();
+    }
+}
+`
