@@ -1,0 +1,31 @@
+**Flatten 2D Vector** — Iterate through 2D array as 1D
+
+class Vector2D {
+
+    private int[][] vec;
+    private int row;
+    private int col;
+
+    public Vector2D(int[][] vec) {
+        this.vec = vec;
+        row = 0;
+        col = 0;
+    }
+
+    private void move() {
+        while (row < vec.length && col >= vec[row].length) {
+            row++;
+            col = 0;
+        }
+    }
+
+    public int next() {
+        move();
+        return vec[row][col++];
+    }
+
+    public boolean hasNext() {
+        move();
+        return row < vec.length;
+    }
+}
